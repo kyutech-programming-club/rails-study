@@ -1,3 +1,4 @@
+# coding: utf-8
 class UsersController < ApplicationController
   def index
     @users = User.all
@@ -11,9 +12,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      redirect_to root_path
+      redirect_to root_path, success: "ログインに成功しました"
     else
-      render :new
+      redirect_to new_user_path, danger: "新規登録に失敗することに成功しました"
     end
   end
 
