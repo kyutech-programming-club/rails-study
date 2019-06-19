@@ -12,9 +12,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      redirect_to root_path, success: "ログインに成功しました"
+      redirect_to root_path, success: "ようこそProChartへ"
     else
-      redirect_to new_user_path, danger: "新規登録に失敗することに成功しました"
+      redirect_to new_user_path, danger: "ユーザー名が重複しているか、書式を満たしていません"
     end
   end
 

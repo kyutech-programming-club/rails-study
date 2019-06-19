@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       redirect_to root_path, success: "ログインに成功しました"
 
     else
-      redirect_to login_path, danger: "ログイン失敗することに成功しました"
+      redirect_to login_path, danger: "ログインに失敗しました"
     end
   end
 
