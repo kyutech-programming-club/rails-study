@@ -1,6 +1,5 @@
 <h1>TOP</h1>
 <% if current_user %>
-  <p>ログインに成功しました</p>
   <% @users.each do |user| %>
     <%= link_to user.name, user_path(user) %>
   <% end %>

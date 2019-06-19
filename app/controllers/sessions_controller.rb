@@ -1,3 +1,4 @@
+# coding: utf-8
 class SessionsController < ApplicationController
   def new
   end
@@ -5,15 +6,15 @@ class SessionsController < ApplicationController
     user = User.find_by(name: params[:name])
     if user && user.authenticate(params[:password])
       log_in user
-      redirect_to root_path, success: "success"
+      redirect_to root_path, success: "ログインに成功しました"
 
     else
-      render 'new'
+      redirect_to login_path, danger: "ログイン失敗することに成功しました"
     end
   end
 
   def destroy
     log_out
-    redirect_to root_path
+    redirect_to root_path, success: "ログアウトしました"
   end
 end
