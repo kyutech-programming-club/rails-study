@@ -1,4 +1,7 @@
+# coding: utf-8
 class UsersController < ApplicationController
+  before_action :authenticate_user, {only: [:show]}
+  
   def index
     @users = User.all
   end
@@ -11,9 +14,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      redirect_to root_path
+      redirect_to root_path, success: "ようこそProChartへ"
     else
-      render :new
+      redirect_to new_user_path, danger: "ユーザー名が重複しているか、書式を満たしていません"
     end
   end
 
