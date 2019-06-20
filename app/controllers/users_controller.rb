@@ -1,6 +1,5 @@
 # coding: utf-8
 class UsersController < ApplicationController
-  before_action :correct_user, {only: [:show]}
   
   def index
     @users = User.all
