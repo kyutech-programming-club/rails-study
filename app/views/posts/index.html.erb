@@ -1,2 +1,6 @@
 <h1>投稿</h1>
-<p>ここは投稿ページです</p>
+<%= link_to "新言語登録", new_post_path %>
+<p>登録言語リスト</p>
+<% @posts.each do |post| %>
+  <%= post.content %>
+<% end %>

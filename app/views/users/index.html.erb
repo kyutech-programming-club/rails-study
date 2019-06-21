@@ -3,7 +3,7 @@
   <% @users.each do |user| %>
     <%= link_to user.name, user_path(user) %>
   <% end %>
-  <%= link_to "投稿", posts_index_path %>
+  <%= link_to "投稿", new_post_path %>
 
 <% else %>
   <%= link_to "ログイン", login_path %>
